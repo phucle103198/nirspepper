@@ -1,0 +1,340 @@
+﻿{% extends "basic.html" %}
+{% load static %}
+
+ 
+{% block head %}
+
+{% endblock %}
+
+
+{% block body %}
+
+  <section class="hero">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <h1 class="hero-heading" style="color: #0f455d;">Ứng dụng xác thực tiêu</h1>
+            <p class="hero-desc">
+                Ứng dụng xác thực và truy xuất nguồn gốc của sản phẩm tiêu Việt Nam bằng máy đo quang phổ cận hồng ngoại (NIRS)
+                kết hợp mô hình máy học giúp giảm thời gian phân tích và xác thực. Các bạn chỉ cần cập nhật cho chúng tôi 
+                file dữ liệu quang phổ cận hồng ngoại của mẫu hạt tiêu cần xác thực sau đó một phiếu xác thực về nguồn gốc và chất lượng
+                sẽ được gửi về email của bạn. Thời gian xác thực chỉ mất chưa tới 5 phút.
+            </p>
+            {% if user.is_authenticated %}
+            <a href="/checkdisease" class="button button--primary button--rounded">
+              Tìm hiểu thêm
+            </a>
+            <br><br>
+
+            {% else %}
+            <a href="/checkdisease" class="button button--primary button--rounded">
+                Bắt đầu ngay
+            </a>
+            <br><br>
+            {% endif %}
+          </div>
+          <div class="col-sm-6">
+            <div class="hero-image">
+              <img src="{% static 'static/media/hero-image.png'%}" alt="">
+            </div>
+          </div>
+      
+        </div>
+      </div>
+  </section>
+
+
+  
+<div class="jumbotron text-center" style="font-family: inherit;">
+  <h1 style="color: #0f455d;">TẠI SAO CẦN PHẢI TRUY XUẤT NGUỒN GỐC?</h1>
+  <p>80% Người tiêu dùng sẵn lòng chi trả với giá thành cao hơn cho sản phẩm được truy xuất
+  nguồn gốc và thông tin xác thực</p>
+
+  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card-body">
+        <div class="icon">
+          <img alt="icon" src="https://res.cloudinary.com/agridential/image/upload/v1624463978/AGD_LandingPage/Icon/benefit-1-icon_m74p9u.svg">
+        </div>
+        <div class="text-wrap">
+          <div class="title">Tăng giá trị sản phẩm</div>
+          <div class="description">Kênh giao tiếp giúp doanh nghiệp chứng minh chất lượng của sản phẩm tương xứng với giá thành bán ra
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-sm-4">
+      <div class="card-body">
+        <div class="icon">
+          <img alt="icon" src="https://res.cloudinary.com/agridential/image/upload/v1624463978/AGD_LandingPage/Icon/benefit-2-icon_avu8hs.svg">
+        </div>
+        <div class="text-wrap">
+          <div class="title">Bảo vệ thương hiệu</div>
+          <div class="description">
+            Giúp người tiêu dùng phân biệt với hàng giả, hàng kém chất lượng, qua đó
+            bảo vệ thương hiệu của sản phẩm
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-sm-4">
+      <div class="card-body">
+        <div class="icon">
+          <img alt="icon" src="https://res.cloudinary.com/agridential/image/upload/v1624463978/AGD_LandingPage/Icon/benefit-3-icon_iibfoj.svg">
+        </div>
+        <div class="text-wrap">
+          <div class="title" style="color: ;">Xác thực bằng ML</div>
+          <div class="description">
+            Công nghệ Machine Learning cùng lượng dữ liệu lớn đảm bảo tính chính xác tương đối cao
+          </div>
+        </div>
+      </div> 
+    </div>
+  </div>
+</div>
+</div>
+<!-- <div class="jumbotron">
+    <h1 class="display-4">Xác thực tiêu</h1>
+    <p class="lead">
+            Ứng dụng xác thực và truy xuất nguồn gốc của sản phẩm tiêu Việt Nam bằng máy đo quang phổ cận hồng ngoại (NIRS)
+            kết hợp mô hình máy học giúp giảm thời gian phân tích và xác thực. Các bạn chỉ cần cập nhật cho chúng tôi 
+            file dữ liệu quang phổ cận hồng ngoại của mẫu hạt tiêu cần xác thực sau đó một phiếu xác thực về nguồn gốc và chất lượng
+            sẽ được gửi về email của bạn. Thời gian xác thực chỉ mất chưa tới 5 phút.
+  
+                
+  
+     {% if user.is_authenticated %}
+
+     
+     {% else %}
+
+      <p class="lead">
+      <button type="button" class="btn btn-primary btn-lg"  data-toggle="modal" data-target=".bd-example-modal-lg">Bắt đầu ngay</button>
+      </p>
+    
+
+</div> -->
+
+
+<div class="container mt-5 mb-3" style="width:fit-content;">
+      <center>
+        <h1 style="hero-heading">Đăng nhập</h1>
+        </center>
+      
+      
+      <form>
+          <div class="container mt-5 mb-5">
+       <div class="row">
+          <div class="col">
+             <a href="{% url 'sign_in_admin' %}">
+      <img  alt="admin" src="{% static 'homepage/admin.png' %}"  class="img">
+      </a>
+          </div>
+      
+          <div class="col">
+      <a href="{% url 'sign_in_doctor' %}">
+      <img  alt="doctor" src="{% static 'homepage/doctor.png' %}"  class="img">
+      </a>
+          </div>
+      
+          <div class="col">
+      <a href="{% url 'sign_in_patient' %}">
+      <img  alt="patient" src="{% static 'homepage/patient.png' %}"  class="img">
+      </a>
+          </div>
+        </div>
+        </div>
+      </form>
+</div>
+
+
+    
+
+    {% endif %}
+
+
+
+<!-- Large modal -->
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+   
+<center>
+  <h1>Đăng nhập</h1>
+  <form>
+      <div class="container mt-5 mb-5">
+  <div class="row">
+      <div class="col">
+        <a href="{% url 'sign_in_admin' %}">
+  <img  alt="admin" src="{% static 'homepage/admin.png' %}"  class="img">
+  </a>
+      </div>
+
+      <div class="col">
+  <a href="{% url 'sign_in_doctor' %}">
+  <img  alt="doctor" src="{% static 'homepage/manager.png' %}"  class="img">
+  </a>
+      </div>
+
+      <div class="col">
+  <a href="{% url 'sign_in_patient' %}">
+  <img  alt="patient" src="{% static 'homepage/farmert.png' %}"  class="img">
+  </a>
+      </div>
+    </div>
+    </div>
+</form>
+</center>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- Large modal -->
+
+<div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+   
+<center>
+  <h1>Đăng ký</h1>
+  </center>
+<br><br>
+
+<center>
+<form>
+    <div class="container mt-5 mb-5 ml-5 mr-5">
+ <div class="row">
+
+    <div class="col">
+<a href="{% url 'signup_doctor' %}">
+<img  alt="doctor" src="{% static 'homepage/manager.png' %}"  class="img">
+</a>
+    </div>
+
+    <div class="col">
+<a href="{% url 'signup_patient' %}">
+<img  alt="patient" src="{% static 'homepage/farmer.png' %}"  class="img">
+</a>
+    </div>
+  </div>
+  </div>
+</form>
+</center>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!--
+<br><br><br><br>
+<center><h1><font color="#000000">Chuyên gia của chúng tôi</font></h1></center>
+<div class="row mt-5 mb-5">
+    <div class="col">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="card-title">TS. Hoàng Quốc Tuấn </h5>
+                <img  alt="admin" src="{% static 'homepage/Anh CV Tuan.jpg' %}" width="200" height="150" class="rounded">
+                <p class="card-text">Giảng viên, Bộ môn Quản lý Chất lượng, Viện Công nghệ Sinh học và Công nghệ Thực phẩm, Trường Đại học Bách Khoa Hà Nội.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="card-title">TS. Phạm Ngọc Hưng </h5>
+                <img  alt="admin" src="{% static 'homepage/PNH-65namBK.jpg' %}" width="200" height="150" class="rounded">
+                <p class="card-text">Giảng viên, Bộ môn Quá trình và thiết bị CNSH&CNTP, Viện Công nghệ sinh học và Công nghệ thực phẩm, Trường Đại học Bách Khoa Hà Nội.</p>
+                
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="card-title">Lê Tuấn Phúc</h5>
+                <img  alt="admin" src="{% static 'homepage/phuc.jpg' %}" width="200" height="150" class="rounded">
+                <p class="card-text">Kỹ sư, Công nghệ thực phẩm.</p>
+                <p class="card-text"></p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+      <div class="card">
+          <div class="card-body text-center">
+              <h5 class="card-title">Trương Việt Hoàng</h5>
+              <img  alt="admin" src="{% static 'homepage/hoang.jpg' %}" width="200" height="150" class="rounded">
+              <p class="card-text">Kỹ sư, Công nghệ thực phẩm.</p>
+              <p class="card-text"></p>
+          </div>
+      </div>
+  </div>
+</div>
+  
+
+<br><br><br><br>
+
+-->        
+
+
+
+
+
+<div id="footer" class="card text-light" style="background-color: #0f455d;">
+  <div class="card-body">
+        Liên hệ:
+      <ul >
+      <li >
+        <h5 class="mb-1">Email: admin@gmail.com</h5>
+      </li>
+      <li >
+        <h5 class="mb-1">Di động: 0900111000</h5>
+      </li>
+      <li >
+        <h5 class="mb-1">Địa chỉ: Đại học Bách Khoa Hà Nội</h5>
+        <div class="footer-copyright text-center">© 2021 Copyright:
+          <a href="#" style="text-decoration: none; color: white;">nirspepper.com</a>
+        </div>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+  
+ 
+
+
+
+
+
+</div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+    
+
+
+
+
+    
+{% endblock %}

@@ -1,0 +1,36 @@
+.header{
+    padding-bottom: 20px;
+}
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-auth{
+    display: flex;
+    gap: 0 30px;
+    align-items: center;
+    text-transform: capitalize;
+}
+.menu{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0 50px;
+}
+.menu-link{
+    color: inherit;
+    gap: 0 30px;
+    text-decoration: none;
+}
+.header-signin{
+    color: inherit;
+    font-weight: 500;
+    text-decoration: none;
+}
+.header-signup{
+    padding: 13px 30px;
+    border-radius: 100rem;
+    border: 1px solid;
+    text-decoration: none;
+}

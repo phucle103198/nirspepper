@@ -1,4 +1,4 @@
-﻿altgraph==0.17.2
+altgraph==0.17.2
 api==0.0.7
 asgiref==3.4.1
 astroid==2.8.0
@@ -96,7 +96,6 @@ sklearn==0.0
 soupsieve==2.2.1
 sqlparse==0.4.2
 threadpoolctl==3.0.0
-tkdesigner==1.0.4
 toml==0.10.2
 tornado==6.1
 traitlets==5.1.0

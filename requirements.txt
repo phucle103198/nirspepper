@@ -94,7 +94,6 @@ seaborn==0.11.2
 six==1.16.0
 sklearn==0.0
 soupsieve==2.2.1
-spc-spectra==0.4.0
 sqlparse==0.4.2
 threadpoolctl==3.0.0
 tkdesigner==1.0.4
